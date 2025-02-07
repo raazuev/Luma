@@ -29,27 +29,32 @@ export const Header: React.FC = () => {
               <h1>Luma</h1>
             </Link>
           </div>
-          <div className={styles.icons}>
-            <Link to="/cart">
-              <svg aria-labelledby="cart">
-                <use href="/src/shared/assets/img/icons/sprite.svg#icon-cart"></use>
-              </svg>
-            </Link>
-            <Link to="/user">
-              <svg aria-labelledby="user">
-                <use href="/src/shared/assets/img/icons/sprite.svg#icon-user"></use>
-              </svg>
-            </Link>
-            <button
-              className={styles.burger}
-              onClick={toggleMenu}
-              aria-label="Navigation"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+          <div
+            className={classNames(styles.menu_btn, {
+              [styles.active]: menuOpen,
+            })}
+            onClick={toggleMenu}
+            aria-label="Navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div
+            className={classNames(styles.icons_link, { [styles.icons_active]: menuOpen })}
+          >
+            <div className={styles.icons}>
+              <Link to="/cart">
+                <svg aria-labelledby="cart">
+                  <use href="/sprite.svg#icon-cart"></use>
+                </svg>
+              </Link>
+              <Link to="/user">
+                <svg aria-labelledby="user">
+                  <use href="/sprite.svg#icon-user"></use>
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
         <hr />
