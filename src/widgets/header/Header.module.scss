@@ -21,7 +21,7 @@
       height: 130px;
 
       @media (max-width: 600px) {
-        height: 200px;
+        height: 212px;
         gap: 20px;
         flex-direction: column;
       }
@@ -88,7 +88,7 @@
 
 // Медиа запросы для бургер меню
 
-.burger {
+.menu_btn {
   display: none;
 }
 
@@ -96,65 +96,77 @@
   .icons {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-
-  .search {
-    position: absolute;
-    left: 20px;
   }
 
   .menu {
     gap: 10px;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
     background-color: vars.$Light_Grey;
-    padding: 2rem;
+    padding: 3rem;
     width: 50%;
     border-radius: 8px;
   }
 
-  .burger {
-    position: absolute;
-    right: 32px;
-    top: 22%;
-    background-color: vars.$Primary;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 35px;
-    height: 27px;
-    background: transparent;
-    border: none;
+  .menu_btn {
+    position: relative;
+    width: 50px;
+    height: 30px;
     cursor: pointer;
     z-index: 1001;
-    &:active {
-      transform: scaleY(2);
-    }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
 
     span {
-      height: 1px;
-      background: #333;
+      width: 55px;
+      height: 4px;
+      background: vars.$Primary;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+      }
+    }
+  }
+
+  .icons_link {
+    display: none;
+    z-index: 10;
+
+    &.icons_active {
+      position: absolute;
+      display: flex;
+      gap: 10px;
+      transform: translateY(204px);
     }
   }
 
   .link {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgb(39 39 39 / 80%);
+    height: 50%;
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    background-color: rgb(164 164 208 / 28%);
 
     &.active {
-      width: 100%;
       display: flex;
-      align-items: flex-start;
     }
   }
 }

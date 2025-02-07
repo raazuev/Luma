@@ -11,7 +11,6 @@ Luma - is an online store with product catalog and filtering.
 - **React Router** 
 - **Axios**
 - **SASS + SCSS Modules**
-- **Classnames**
 - **ESLint и TypeScript**
 - **Vite**
 
@@ -28,8 +27,6 @@ Luma - is an online store with product catalog and filtering.
   npm run build
 5. Project Linting:
   npm run lint
-
-###
 
 ## Project structure
 
