@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Button onClick={handleSubmit}>Подписаться</Button>
+          <Button type="submit">Подписаться</Button>
         </form>
       </section>
       <nav className={styles.footer__nav}>

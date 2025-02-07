@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./InputField.module.scss";
 
 interface InputFieldProps {
+  label?: string;
   name: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
