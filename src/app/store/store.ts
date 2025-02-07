@@ -1,0 +1,13 @@
+// Главный редюсер
+
+import { configureStore } from "@reduxjs/toolkit";
+
+const rootReducer = {};
+
+export const store = configureStore({
+  reducer: rootReducer,
+});
+
+// Типы для доступа к состоянию и диспетчеру
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

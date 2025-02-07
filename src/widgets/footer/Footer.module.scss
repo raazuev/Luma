@@ -1,0 +1,61 @@
+// Модульные стили для Footer
+
+@use "/src/shared/assets/styles/variables" as vars;
+
+.footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 250px;
+  justify-content: space-around;
+  background-color: vars.$Dark_Primary;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    h3 {
+      font-family: "Futura-Light";
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.2rem;
+      color: vars.$Light_Grey;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 30px;
+      max-width: 290px;
+    }
+
+    &_form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 20px;
+
+      li {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 30px;
+        max-width: 150px;
+      }
+
+      a {
+        font-family: "Futura-Light";
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.2rem;
+        color: vars.$Light_Grey;
+      }
+    }
+  }
+}

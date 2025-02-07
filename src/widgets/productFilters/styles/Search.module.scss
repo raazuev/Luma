@@ -1,0 +1,27 @@
+// Модульные стили для компонента поиска Search
+
+@use "/src/shared/assets/styles/variables" as vars;
+@use "/src/shared/assets/styles/mixin" as mix;
+
+svg {
+  cursor: pointer;
+}
+
+.input {
+  @include mix.Input;
+  background-color: vars.$Dark_Primary;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.3s ease;
+  display: none;
+
+  @media (max-width: 400px) {
+    width: 20px;
+  }
+
+  &.active {
+    position: absolute;
+    display: inline;
+    visibility: visible;
+    z-index: 10;
+  }
+}

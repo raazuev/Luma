@@ -1,0 +1,21 @@
+// Подключение локальных шрифтов
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../fonts/ClashDisplay-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Futura-Book";
+  src: url("../fonts/FuturaPT-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Futura-Light";
+  src: url("../fonts/FuturaPT-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Satochi-Regular";
+  src: url("../fonts/Satoshi-Regular.woff2") format("woff2");
+}

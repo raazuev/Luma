@@ -1,0 +1,6 @@
+// Входная точка стилей с глобальными импортами. Экспорт в main.tsx
+
+@use "@/shared/assets/styles/_variables.scss" as vars;
+@use "@/shared/assets/styles/_mixin.scss" as mix;
+@use "@/shared/assets/styles/_reset.scss";
+@use "@/shared/assets/styles/_fonts.scss";
