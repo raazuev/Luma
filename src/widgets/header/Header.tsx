@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
+import { CATEGORIES } from "@/shared/constants/categories";
 import { SliderTheme } from "./ui/sliderTheme/SliderTheme";
 import styles from "./Header.module.scss";
 
@@ -65,22 +66,16 @@ export const Header: React.FC = () => {
           onClick={closeMenu}
         >
           <ul className={styles.menu} onClick={(e) => e.stopPropagation()}>
-            <li>
-              <Link to="/">Посуда</Link>
-            </li>
-            <li>
-              <Link to="/">Кровати</Link>
-            </li>
-            <li>
-              <Link to="/">Стулья</Link>
-            </li>
-            <li>
-              <Link to="/">Диваны</Link>
-            </li>
+            {CATEGORIES.map((category) => (
+              <li key={category}>
+                <Link to={`/catalog/${category.toLowerCase()}`}>
+                  {category}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
     </header>
   );
 };
-
