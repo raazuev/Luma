@@ -41,7 +41,9 @@ export const Header: React.FC = () => {
             <span></span>
           </div>
           <div
-            className={classNames(styles.icons_link, { [styles.icons_active]: menuOpen })}
+            className={classNames(styles.icons_link, {
+              [styles.icons_active]: menuOpen,
+            })}
           >
             <div className={styles.icons}>
               <Link to="/cart">
@@ -81,3 +83,4 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
