@@ -1,11 +1,12 @@
 // Главный редюсер
 
 import { configureStore } from "@reduxjs/toolkit";
-
-const rootReducer = {};
+import productReducer from "@/entities/products/store/ProductsSlice";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    products: productReducer,
+  },
 });
 
 // Типы для доступа к состоянию и диспетчеру

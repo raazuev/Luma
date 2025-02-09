@@ -1,8 +1,9 @@
-// Типы для товаров
-
-export interface Products {
+export interface Product {
   id: number;
-  img: string;
+  imageUrl: string;
   title: string;
+  productsType: string[];
   price: string;
+  category: number[];
+  rating: number;
 }

@@ -1,5 +1,5 @@
 import { POPULAR } from "./store/PopularMock";
-import styles from "./styles/PopulatProducts.module.scss";
+import styles from "./styles/PopularProducts.module.scss";
 
 export const PopularProducts: React.FC = () => {
   return (
