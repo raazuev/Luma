@@ -1,15 +1,12 @@
 // Баннер для главной страницы
 
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/shared/ui/button/Button";
 import styles from "./Banner.module.scss";
 import { ROUTES } from "@/shared/constants/routes";
-import { Search } from "@/widgets/productFilters/Search";
 
 export const Banner: React.FC = () => {
   const navigate = useNavigate();
-  const [searchValue, setSearchValue] = useState("");
 
   const handleNavigate = () => {
     navigate(ROUTES.CATALOG);

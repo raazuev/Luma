@@ -1,0 +1,46 @@
+@use "/src/shared/assets/styles/variables" as vars;
+
+.types {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .title {
+      font-family: "Futura-Book";
+      color: vars.$Dark_Primary;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+    }
+
+    .ul {
+      .subtitle {
+        align-items: center;
+        padding-bottom: 25px;
+        font-family: "Futura";
+        color: vars.$Primary;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.2rem;
+
+        label {
+          display: flex;
+          align-content: center;
+
+          .checkbox {
+            margin-right: 10px;
+            accent-color: vars.$Primary;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
