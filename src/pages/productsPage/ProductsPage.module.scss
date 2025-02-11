@@ -1,0 +1,16 @@
+.products_page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px; 
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(300px, 2fr);
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .products {
+    margin-top: 50px;
+  }
+}

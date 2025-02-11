@@ -17,9 +17,9 @@ export const Search: React.FC<SearchProps> = ({ value, onChange }) => {
   };
 
   return (
-    <>
+    <div className={styles.search}>
       <svg aria-labelledby="search" onClick={toggleInput}>
-        <use href="/src/shared/assets/img/icons/sprite.svg#icon-search"></use>
+        <use href="/sprite.svg#icon-search"></use>
       </svg>
       <input
         type="text"
@@ -30,6 +30,6 @@ export const Search: React.FC<SearchProps> = ({ value, onChange }) => {
           [styles.active]: isInputVisible,
         })}
       />
-    </>
+    </div>
   );
 };

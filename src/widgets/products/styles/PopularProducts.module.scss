@@ -1,8 +1,16 @@
 @use "/src/shared/assets/styles/variables" as vars;
 
 .container {
-  background: url("/public/popular/popular_bg.jpeg") center/cover no-repeat;
+  background: url("/src/shared/assets/img/popular/popular.jpeg") center/cover
+    no-repeat;
   height: 500px;
+  position: relative;
+  &::before {
+    color: red;
+    position: absolute;
+    z-index: -1;
+    content: "Популярные товары";
+  }
 
   .popular {
     margin: 0 auto;
@@ -30,36 +38,13 @@
       }
     }
 
-    &__item {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 250px));
-      justify-items: center;
+    .swiper_container {
+      display: flex;
       justify-content: center;
-      margin: 20px;
-      padding: 20px;
-      height: 360px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      &::-webkit-scrollbar {
-        width: 4px;
-        height: 20px;
-        scrollbar-gutter: stable;
-      }
-      &::-webkit-scrollbar-thumb {
-        background-color: vars.$Primary;
-        border-radius: 10px;
-        width: 20px;
-        background-clip: padding-box;
-      }
-      &::-webkit-scrollbar-track {
-        background-color: #adb6bf66;
-        margin: 40px;
-      }
 
       .li {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        width: 50%;
+        height: 350px;
 
         .img {
           height: 200px;

@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
           <ul className={styles.menu} onClick={(e) => e.stopPropagation()}>
             {CATEGORIES.map((category) => (
               <li key={category}>
-                <Link to={`/catalog/${category.toLowerCase()}`}>
+                <Link to={`/products/${category.toLowerCase()}`}>
                   {category}
                 </Link>
               </li>

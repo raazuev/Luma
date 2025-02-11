@@ -3,8 +3,9 @@
 @use "/src/shared/assets/styles/variables" as vars;
 @use "/src/shared/assets/styles/mixin" as mix;
 
-svg {
-  cursor: pointer;
+.search {
+  width: 20px;
+  height: 20px;
 }
 
 .input {
@@ -19,6 +20,7 @@ svg {
   }
 
   &.active {
+    margin-left: 10px;
     position: absolute;
     display: inline;
     visibility: visible;
