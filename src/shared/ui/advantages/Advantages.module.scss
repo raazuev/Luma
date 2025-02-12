@@ -9,7 +9,7 @@
   margin-top: 30px;
   padding: 20px;
 
-  h3 {
+  &__title {
     margin-bottom: 50px;
     font-family: "Futura-Book";
     font-weight: 400;
@@ -17,44 +17,53 @@
     line-height: 1.4rem;
   }
 
-  ul {
+  .ul {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    place-items: center;
-    gap: 20px;
 
-    li {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: vars.$Light_Grey;
-      padding: 30px;
-      height: 260px;
-      gap: 10px;
+    .link {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      place-items: center;
+      gap: 20px;
 
-      .svg {
-        height: 35px;
-      }
+      .li {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: vars.$Light_Grey;
+        padding: 30px;
+        height: 260px;
+        gap: 10px;
+        transition: all 0.4s ease;
 
-      h4 {
-        overflow: hidden;
-        width: 160px;
-        height: 50px;
-        font-family: "Futura-Light";
-        font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 1.3rem;
-      }
+        &:hover {
+          transform: scale(1.05);
+        }
 
-      p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 130px;
-        font-family: "Futura-Light";
-        font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 1.1rem;
+        .svg {
+          height: 35px;
+        }
+
+        h4 {
+          overflow: hidden;
+          width: 160px;
+          height: 50px;
+          font-family: "Futura-Light";
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.3rem;
+        }
+
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: 130px;
+          font-family: "Futura-Light";
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.1rem;
+        }
       }
     }
   }

@@ -15,9 +15,14 @@ const ItemPage = lazy(async () => {
   const module = await import("@/pages/itemPage/ItemPage");
   return { default: module.ItemPage };
 });
+const NotFound = lazy(async () => {
+  const module = await import("@/shared/ui/notFound/NotFound");
+  return { default: module.NotFound };
+});
 
 export const appRoutes = [
   { path: "/", element: <HomePage /> },
   { path: "/products", element: <ProductsPage /> },
   { path: "/products/:id", element: <ItemPage /> },
+  { path: "*", element: <NotFound /> },
 ];
