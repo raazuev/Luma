@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/shared/hooks/reduxHooks";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { fetchProducts } from "@/entities/products/store/ProductsSlice";
+import { useProducts } from "@/shared/hooks/useProducts";
+import { ProductsList } from "@/shared/ui/productsList/ProductsList";
 import { Spinner } from "@/shared/ui/spinner/Spinner";
 import styles from "./styles/PopularProducts.module.scss";
 import "swiper/css";
@@ -10,21 +9,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export const PopularProducts: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const { products, loading, error } = useAppSelector(
-    (state) => state.products
-  );
+  const { products, loading, error } = useProducts();
 
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
-  if (loading)
-    return (
-      <p>
-        <Spinner />
-      </p>
-    );
+  if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
 
   return (
@@ -44,17 +31,9 @@ export const PopularProducts: React.FC = () => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {products.map((popular) => (
-            <SwiperSlide className={styles.swiper_container} key={popular.id}>
-              <div className={styles.li}>
-                <img
-                  className={styles.img}
-                  src={popular.imageUrl}
-                  alt={popular.title}
-                />
-                <h3 className={styles.h3}>{popular.title}</h3>
-                <span className={styles.span}>{popular.price}</span>
-              </div>
+          {products.map((product) => (
+            <SwiperSlide className={styles.swiper_container} key={product.id}>
+              <ProductsList products={[product]} grid={false} />
             </SwiperSlide>
           ))}
         </Swiper>
