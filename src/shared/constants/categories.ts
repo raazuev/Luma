@@ -1,1 +1,1 @@
-export const CATEGORIES: string[] = ["Посуда", "Диваны", "Кровати", "Стулья"];
+export const CATEGORIES: string[] = ["Посуда", "Мебель", "Светильники"];

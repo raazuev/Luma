@@ -12,5 +12,5 @@ export const useProducts = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  return { products, loading, error };
+  return { products, loading, error, dispatch };
 };
