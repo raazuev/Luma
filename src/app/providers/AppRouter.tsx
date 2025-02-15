@@ -7,6 +7,7 @@ import { appRoutes } from "./Routes";
 import { Header } from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer/Footer";
 import { Spinner } from "@/shared/ui/spinner/Spinner";
+import { ErrorBoundary } from "@/shared/ui/errorBoundary/ErrorBoundary";
 
 export const AppRouter: React.FC = () => {
   return (
@@ -14,11 +15,13 @@ export const AppRouter: React.FC = () => {
       <Header />
       <main>
         <Suspense fallback={<Spinner />}>
-          <Routes>
-            {appRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-          </Routes>
+          <ErrorBoundary>
+            <Routes>
+              {appRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Routes>
+          </ErrorBoundary>
         </Suspense>
       </main>
       <Footer />
