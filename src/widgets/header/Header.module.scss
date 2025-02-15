@@ -1,10 +1,7 @@
 // Модульные стили для Header
 
-@use "/src/shared/assets/styles/variables" as vars;
-
 .header {
   position: relative;
-  background-color: #fff;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +29,7 @@
           font-size: 1.8rem;
           font-weight: 400;
           line-height: 1.85rem;
-          color: vars.$Main_Dark;
+          color: var(--text-color);
           cursor: pointer;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -73,12 +70,12 @@
           font-size: 1.1rem;
           font-weight: 400;
           line-height: 1.35rem;
-          color: vars.$Primary;
+          color: var(--text-color);
           cursor: pointer;
           transition: all 0.2 ease;
 
           &:hover {
-            color: vars.$Dark_Primary;
+            color: var(--text-color);
           }
         }
       }
@@ -102,7 +99,7 @@
     gap: 10px;
     flex-direction: column;
     align-items: center;
-    background-color: vars.$Light_Grey;
+    background-color: var(--background-color);
     padding: 3rem;
     width: 50%;
     border-radius: 8px;
@@ -123,7 +120,7 @@
     span {
       width: 55px;
       height: 4px;
-      background: vars.$Primary;
+      background: var(--text-color);
       border-radius: 5px;
       transition: all 0.2s ease-in-out;
     }

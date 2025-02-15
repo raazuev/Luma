@@ -1,7 +1,7 @@
 // Глобальный сброс стилей
 
 @use "scss-reset";
-@use "./variables" as vars;
+@use "./theme";
 
 *,
 *::before,
@@ -14,7 +14,8 @@
 body {
   font-family: "Futura-Light", sans-serif;
   line-height: 1.6;
-  background-color: vars.$Background;
+  background-color: var(--background-color);
+  color: var(--text-color);
   scroll-behavior: smooth;
 }
 

@@ -14,7 +14,7 @@ export const Products: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   if (loading) return <Spinner />;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className={styles.error}>{error}</p>;
 
   const handleToggleList = () => {
     setIsExpanded((prev) => !prev);

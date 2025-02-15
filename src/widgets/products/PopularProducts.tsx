@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useProducts } from "@/shared/hooks/useProducts";
@@ -11,10 +12,12 @@ import "swiper/css/pagination";
 export const PopularProducts: React.FC = () => {
   const { products, loading, error } = useProducts();
 
+  const popularFilter = useMemo(() => {
+    return products.filter((product) => product.rating > 3);
+  }, [products]);
+
   if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
-
-  const popularFilter = products.filter((product) => product.rating > 3);
 
   return (
     <div className={styles.container} aria-label="Популярные товары">
